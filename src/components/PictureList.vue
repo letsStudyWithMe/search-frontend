@@ -3,6 +3,7 @@
       item-layout="horizontal"
       :grid="{ gutter: 16, xs: 1, sm: 2, md: 4, lg: 4, xl: 6, xxl: 3 }"
       :data-source="props.pictureList"
+      :pagination="pagination"
   >
     <template #renderItem="{ item }">
       <a-list-item>
@@ -27,6 +28,12 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   pictureList: () => [],
 });
+const pagination = {
+  onChange: (page: number) => {
+    console.log(page);
+  },
+  pageSize: 6,
+};
 </script>
 <style scoped>
 .gege {
