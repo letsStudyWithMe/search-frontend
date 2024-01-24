@@ -130,7 +130,7 @@ watchEffect(() => {
     text: route.query.text,
     type: route.params.category,
   } as any;
-  loadAllData(searchParams.value);
+  loadData(searchParams.value);
 });
 
 const onSearch = (value: string) => {
